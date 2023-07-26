@@ -2,7 +2,7 @@
 
 require_once 'config/config.php';
 
-class Platform {
+class Platfomrs {
 
 	private $table = 'plataformas';
 	private $conection;
@@ -20,7 +20,7 @@ class Platform {
 	/* Get all notes */
 	public function getAll(){
 		$this->getConection();
-		$sql = "SELECT * FROM ".$this->table." ORDER BY juego ASC";
+		$sql = "SELECT * FROM ".$this->table;
 		$stmt = $this->conection->prepare($sql);
 		$stmt->execute();
 

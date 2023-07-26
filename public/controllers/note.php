@@ -1,6 +1,6 @@
 <?php 
 
-require_once 'model/note.php';
+require_once 'models/note.php';
 
 class noteController{
 	public $page_title;

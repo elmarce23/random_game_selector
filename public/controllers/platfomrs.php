@@ -2,7 +2,7 @@
 
 require_once 'models/platforms.php';
 
-class platfController{
+class platfomrsController{
 	public $page_title;
 	public $view;
     public $platfObj;
@@ -10,7 +10,7 @@ class platfController{
 	public function __construct() {
 		$this->view = 'list_platf';
 		$this->page_title = '';
-		$this->platfObj = new Platform();
+		$this->platfObj = new Platfomrs();
 	}
 
 	/* List all notes */

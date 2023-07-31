@@ -6,8 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="views/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="views/css/personalised.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-
+    <link rel="icon" type="image" href="views/images/random.png">
     <title>Random Game Selector</title>
 
     <style>
@@ -15,39 +16,84 @@
             max-width: 1024px;
             max-height: 516px;
         }
+        /* Texts */
+        
+        .nav-link {
+            color: #6610f2;
+        }
+        
+        .nav-link:hover {
+            color: #198754;
+        }
     </style>
 
 </head>
 
-<div class="container">
-    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+<body>
+
+    <div class="container">
+        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
         #
         <span class="fs-4">Milogo</span>
       </a>
 
-      <ul class="nav nav-pills">
-        <li class="nav-item"><a href="#" class="nav-link">Inicio</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Agregar</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Registrarse</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Random</a></li>
-      </ul>
-    </header>
-  </div>
+            <ul class="nav nav-pills">
+                <li class="nav-item"><a href="#" class="nav-link fw-bold" id="Inicio" onclick="openNav('Inicio')">Inicio</a></li>
+                <li class="nav-item"><a href="#" class="nav-link fw-bold" id="Agregar" onclick="openNav('Agregar')">Agregar</a></li>
+                <li class="nav-item"><a href="#" class="nav-link fw-bold" id="Random" onclick="openNav('Random')">Random</a></li>
+            </ul>
+        </header>
+    </div>
 
     <main>
 
-        <section id="landing" class="mx-3 d-flex flex-column">
-            <div class="flex-shrink-0">
-                <img src="views/images/landing-1.jpg" class=" img-fluid rounded" alt="Friends Gaming"/>
+        <section id="landing" class="nav-open">
+            <div class="mx-3 d-flex flex-column nav-open">
+                <div class="flex-shrink-0">
+                    <img src="views/images/landing-1.jpg" class=" img-fluid rounded" alt="Friends Gaming" />
+                </div>
+                <div class="flex-grow-1 ms-3">
+                    This is some content from a media component. You can replace this with any content and adjust it as needed.
+                </div>
             </div>
-            <div class="flex-grow-1 ms-3">
-                This is some content from a media component. You can replace this with any content and adjust it as needed.
-              </div>
+        </section>
+
+        <section id="AgregaNuevo" class="nav-open" style="display: none;">
+            <form action="" class="container">
+                <h2>Agrega un Juego</h2>
+                <div class="mb-3">
+                    <label for="JuegoName" class="form-label">Juego</label>
+                    <input type="text" id="JuegoName" class="form-control" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text">Agrega juegos para la base de datos y tu nombre para elegir un equipo.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="UserName" class="form-label">Usuario</label>
+                    <input type="text" id="UserName" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="Plataforma"></label>
+                    <select id="Plataforma" class="form-select">
+                    <option selected>Plataforma</option>
+                </select>
+                </div>
+            </form>
+        </section>
+
+        <section id="RandomGame" class="nav-open" style="display: none;">
+            <div class="container">
+                <h2>RANDOM GAME</h2>
+                <div class="d-flex flex-column">
+                    <button type="button" class="btn btn-success">Random Game</button>
+                    <span>Aqui Sale el Juego</span>
+                    <button type="button" class="btn btn-success">Random Team</button>
+                    <span>Aqui Sale el Team</span>
+                </div>
+            </div>
         </section>
 
     </main>
-    
+
     <footer>
         <div class="container">
             <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
@@ -59,18 +105,35 @@
                     </a>
                     <span class="mb-3 mb-md-0 text-body-secondary"> Created by elMarce23 </span>
                 </div>
-    
+
                 <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-                    <li class="ms-3"><a class="text-body-secondary" href="#"><i class="bi bi-twitter"></i></a></a></li>
-                    <li class="ms-3"><a class="text-body-secondary" href="#"><i class="bi bi-instagram"></i></a></a></li>
+                    <li class="ms-3"><a class="text-body-secondary" href="#"><i class="bi bi-twitter"></i></a></a>
+                    </li>
+                    <li class="ms-3"><a class="text-body-secondary" href="#"><i class="bi bi-instagram"></i></a></a>
+                    </li>
                     <li class="ms-3"><a class="text-body-secondary" href="#"><i class="bi bi-facebook"></i></a></li>
                     <li class="ms-3"><a class="text-body-secondary" href="https://github.com/elmarce23" target="_blank"><i class="bi bi-github"></i></a></li>
                 </ul>
             </footer>
         </div>
     </footer>
-    
+
     <script type="javascript" src="views/js/bootstrap.bundle.min.js"></script>
+    <!--<script src="views/js/main.js" type="javascript"></script>-->
+
+    <script>
+        function openNav(navName) {
+            let i;
+            console.log(navName);
+            let x = document.getElementsByClassName("nav-open");
+            for (i = 0; i < x.length; i++) {
+                console.log(x[i]);
+                x[i].style.display = "none";
+            }
+            document.getElementById(navName).style.display = "block";
+        }
+    </script>
 
 </body>
+
 </html>

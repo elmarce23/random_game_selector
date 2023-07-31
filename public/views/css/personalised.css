@@ -1,0 +1,10 @@
+root {
+    --indigo: #6610f2
+}
+
+
+/* Texts */
+
+.indigo {
+    color: var(--indigo);
+}
